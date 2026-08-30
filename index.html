@@ -1,149 +1,398 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Feliz Aniversário, Tia! 🎂💖</title>
+  <title>Feliz Aniversário, Tia! 💖</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --rosa: #ff6b9d;
+      --rosa-claro: #ffd6e4;
+      --rosa-suave: #fff4f7;
+      --roxo: #8b5cf6;
+      --texto: #3d2a35;
+      --branco: #ffffff;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffd6e7, #fff0f5, #e6d6ff);
-      color: #5a3d4d;
-      text-align: center;
+      font-family: "DM Sans", sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe0eb, transparent 35%),
+        radial-gradient(circle at bottom right, #e8ddff, transparent 35%),
+        #fff8fa;
       overflow-x: hidden;
     }
 
-    /* Tela inicial */
-    .inicio {
+    /* =========================
+       FUNDO DECORATIVO
+    ========================== */
+
+    .bolinha {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: -1;
+      animation: flutuar 8s ease-in-out infinite;
+    }
+
+    .b1 {
+      width: 180px;
+      height: 180px;
+      background: #ffc1d6;
+      top: 10%;
+      left: -70px;
+    }
+
+    .b2 {
+      width: 220px;
+      height: 220px;
+      background: #d9c7ff;
+      bottom: 10%;
+      right: -100px;
+      animation-delay: 2s;
+    }
+
+    .b3 {
+      width: 100px;
+      height: 100px;
+      background: #ffe6a7;
+      top: 60%;
+      left: 10%;
+      animation-delay: 4s;
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       padding: 30px;
     }
 
-    .inicio h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: aparecer 2s ease;
+    .hero-conteudo {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+      animation: aparecer 1.5s ease;
     }
 
-    .inicio p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-
-    .botao {
-      background: #e85d8b;
-      color: white;
-      border: none;
-      padding: 15px 30px;
+    .pequeno-texto {
+      display: inline-block;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 10px 18px;
       border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
 
-    .botao:hover {
-      transform: scale(1.08);
-      background: #d94b7a;
-    }
-
-    /* Mensagem */
-    .mensagem {
-      padding: 80px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .mensagem h2 {
-      font-size: 2.2rem;
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 1;
       margin-bottom: 25px;
     }
 
-    .mensagem p {
-      font-size: 1.1rem;
+    .hero h1 span {
+      color: var(--rosa);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      font-size: 1.15rem;
       line-height: 1.8;
-      background: rgba(255,255,255,0.6);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      opacity: 0.8;
     }
 
-    /* Galeria */
-    .galeria {
-      padding: 60px 20px;
+    .botao {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 28px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--rosa), var(--roxo));
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 15px 35px rgba(255, 107, 157, 0.3);
+      transition: 0.3s;
     }
 
-    .galeria h2 {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
+    .botao:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(255, 107, 157, 0.4);
     }
 
-    .fotos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
+
+    /* =========================
+       SEÇÕES
+    ========================== */
+
+    section.conteudo {
+      max-width: 1100px;
       margin: auto;
+      padding: 110px 25px;
+    }
+
+    .titulo-secao {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .titulo-secao span {
+      font-size: 0.9rem;
+      color: var(--rosa);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      margin-top: 12px;
+    }
+
+
+    /* =========================
+       MENSAGEM
+    ========================== */
+
+    .carta {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(15px);
+      padding: clamp(30px, 6vw, 70px);
+      border-radius: 35px;
+      box-shadow: 0 25px 70px rgba(50,20,40,0.08);
+      position: relative;
+    }
+
+    .carta::before {
+      content: "💌";
+      position: absolute;
+      font-size: 3rem;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .carta p {
+      font-size: 1.1rem;
+      line-height: 2;
+      text-align: center;
+    }
+
+    .assinatura {
+      margin-top: 30px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      color: var(--rosa);
+    }
+
+
+    /* =========================
+       GALERIA
+    ========================== */
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
     }
 
     .foto {
       background: white;
-      padding: 10px 10px 25px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      transform: rotate(-2deg);
-      transition: 0.3s;
-    }
-
-    .foto:nth-child(even) {
-      transform: rotate(2deg);
+      padding: 12px 12px 35px;
+      border-radius: 6px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+      transition: 0.4s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .foto:hover {
-      transform: scale(1.05) rotate(0deg);
+      transform: translateY(-12px) rotate(1deg);
     }
 
     .foto img {
       width: 100%;
-      height: 280px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 5px;
+      display: block;
+      border-radius: 3px;
     }
 
-    /* Final */
+    .foto p {
+      margin-top: 14px;
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+    }
+
+    .foto1 {
+      grid-column: span 7;
+      height: 430px;
+    }
+
+    .foto2 {
+      grid-column: span 5;
+      height: 430px;
+    }
+
+    .foto3 {
+      grid-column: span 4;
+      height: 350px;
+    }
+
+    .foto4 {
+      grid-column: span 4;
+      height: 350px;
+    }
+
+    .foto5 {
+      grid-column: span 4;
+      height: 350px;
+    }
+
+
+    /* =========================
+       FRASE ESPECIAL
+    ========================== */
+
+    .momento {
+      text-align: center;
+      padding: 120px 25px;
+    }
+
+    .momento .emoji {
+      font-size: 4rem;
+      margin-bottom: 25px;
+      animation: pulsar 2s infinite;
+    }
+
+    .momento blockquote {
+      font-family: "Playfair Display", serif;
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1.2;
+    }
+
+    .momento blockquote span {
+      color: var(--rosa);
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+
+    /* =========================
+       FINAL
+    ========================== */
+
     .final {
-      padding: 100px 20px;
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
     }
 
-    .final h2 {
-      font-size: 2.5rem;
+    .final-card {
+      background: linear-gradient(135deg, #ff6b9d, #8b5cf6);
+      color: white;
+      width: min(850px, 100%);
+      padding: clamp(50px, 8vw, 100px) 30px;
+      border-radius: 40px;
+      box-shadow: 0 30px 80px rgba(100, 50, 120, 0.3);
+    }
+
+    .final-card .bolo {
+      font-size: 5rem;
       margin-bottom: 20px;
     }
 
-    .coracao {
-      font-size: 4rem;
-      animation: pulsar 1.5s infinite;
+    .final-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      margin-bottom: 20px;
+    }
+
+    .final-card p {
+      max-width: 550px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.95;
     }
 
     footer {
+      text-align: center;
       padding: 30px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.6;
+    }
+
+
+    /* =========================
+       ANIMAÇÕES AO ROLAR
+    ========================== */
+
+    .revelar {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .revelar.visivel {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @keyframes aparecer {
@@ -158,106 +407,111 @@
       }
     }
 
-    @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
+
+    /* =========================
+       RESPONSIVO
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      .foto1,
+      .foto2,
+      .foto3,
+      .foto4,
+      .foto5 {
+        grid-column: span 12;
+        height: 380px;
       }
 
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    /* Celular */
-    @media (max-width: 600px) {
-      .inicio h1 {
-        font-size: 1.6rem;
+      section.conteudo {
+        padding: 80px 20px;
       }
 
-      .inicio p {
+      .carta p {
         font-size: 1rem;
       }
 
-      .mensagem h2,
-      .galeria h2 {
-        font-size: 1.8rem;
-      }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- Tela inicial -->
-  <section class="inicio">
-    <h1>🎂 Feliz Aniversário, Mi! 💖</h1>
-
-    <p>
-      Hoje é um dia especial, porque celebramos uma pessoa muito importante.
-      Preparei esse pequeno cantinho com algumas lembranças nossas. 🥰
-    </p>
-
-    <a href="#mensagem" class="botao">
-      Clique para ver uma surpresa ✨
-    </a>
-  </section>
+  <!-- Fundo decorativo -->
+  <div class="bolinha b1"></div>
+  <div class="bolinha b2"></div>
+  <div class="bolinha b3"></div>
 
 
-  <!-- Mensagem -->
-  <section class="mensagem" id="mensagem">
+  <!-- TELA INICIAL -->
+  <section class="hero">
 
-    <h2>💌 Uma mensagem para você</h2>
+    <div class="hero-conteudo">
 
-    <p>
-      Feliz aniversário, tia Mi! ❤️<br><br>
+      <div class="pequeno-texto">
+        ✨ Um pequeno presente feito com carinho
+      </div>
 
-      Mesmo que hoje em dia a gente não tenha tanta convivência quanto
-      antigamente, eu guardo com muito carinho as lembranças que temos juntos.
-      Essas fotos talvez sejam antigas, mas cada uma delas representa momentos
-      especiais que ficaram guardados na memória. 🥹💖<br><br>
+      <!-- TROQUE "TIA" PELO NOME DELA -->
+      <h1>
+        Feliz aniversário,
+        <span>Mi! 💖</span>
+      </h1>
 
-      Queria aproveitar o seu dia para te desejar muita felicidade, saúde,
-      amor e muitos momentos bons nessa nova fase da sua vida.
-      Espero que você continue sendo essa pessoa especial e que nunca faltem
-      motivos para sorrir. ✨<br><br>
+      <p>
+        Algumas pessoas fazem parte da nossa história de uma forma especial.
+        E mesmo quando o tempo passa e a vida muda um pouco,
+        algumas lembranças continuam guardadas com muito carinho. 🥹
+      </p>
 
-      Que seu novo ano seja cheio de coisas boas! 🎉🎂<br><br>
+      <a href="#carta" class="botao">
+        Abrir meu presente para você 💌
+      </a>
 
-      Com muito carinho ❤️
-    </p>
+    </div>
 
   </section>
 
 
-  <!-- Fotos -->
-  <section class="galeria">
+  <!-- CARTA -->
+  <section class="conteudo revelar" id="carta">
 
-    <h2>📸 Algumas lembranças nossas</h2>
+    <div class="titulo-secao">
+      <span>Uma mensagem especial</span>
+      <h2>Para você, com carinho 💗</h2>
+    </div>
 
-    <div class="fotos">
+    <div class="carta">
 
-      <div class="foto">
-        <img src="1.jpeg" alt="Nossa lembrança">
-      </div>
+      <p>
+        Feliz aniversário, tia! 🎂💖
+        <br><br>
 
-      <div class="foto">
-        <img src="2.jpeg" alt="Nossa lembrança">
-      </div>
+        Hoje eu queria aproveitar o seu dia para te desejar tudo de mais bonito.
+        Muita saúde, felicidade, amor e momentos especiais nessa nova fase
+        da sua vida.
+        <br><br>
 
-      <div class="foto">
-        <img src="3.jpeg" alt="Nossa lembrança">
-      </div>
+        Talvez hoje a gente não tenha tanta convivência quanto antigamente,
+        mas isso não apaga as lembranças e os momentos que compartilhamos.
+        Essas fotos podem ser antigas, mas cada uma delas guarda um pedacinho
+        de uma história que eu tenho muito carinho em lembrar. 🥹
+        <br><br>
 
-      <div class="foto">
-        <img src="4.jpeg" alt="Nossa lembrança">
-      </div>
+        Fiz esse pequeno site como uma forma de te mostrar que,
+        mesmo com o tempo passando, algumas pessoas e algumas memórias
+        continuam tendo um lugar especial no nosso coração.
+        <br><br>
 
-    <div class="foto">
-        <img src="5.jpeg" alt="Nossa lembrança">
-      </div>
+        Espero que seu novo ano seja cheio de coisas boas,
+        novos momentos felizes e muitos motivos para sorrir.
+        Você merece um aniversário lindo! ✨🎉
+      </p>
 
-          <div class="foto">
-        <img src="6.jpeg" alt="Nossa lembrança">
+      <div class="assinatura">
+        Com carinho, ❤️
       </div>
 
     </div>
@@ -265,23 +519,127 @@
   </section>
 
 
-  <!-- Final -->
-  <section class="final">
+  <!-- GALERIA -->
+  <section class="conteudo revelar">
 
-    <h2>Feliz aniversário! 🎉💖</h2>
+    <div class="titulo-secao">
+      <span>Nossas lembranças</span>
+      <h2>Alguns momentos que ficaram 💭📸</h2>
+    </div>
 
-    <p>
-      Espero que tenha gostado dessa pequena surpresa. 🥰
-    </p>
 
-    <div class="coracao">❤️</div>
+    <div class="galeria">
+
+      <!-- FOTO 1 -->
+      <div class="foto foto1">
+        <img src="1.jpeg" alt="Uma lembrança especial">
+        <p>Uma lembrança que eu guardo com carinho 💖</p>
+      </div>
+
+
+      <!-- FOTO 2 -->
+      <div class="foto foto2">
+        <img src="2.jpeg" alt="Um momento especial">
+        <p>Momentos que o tempo não apaga ✨</p>
+      </div>
+
+
+      <!-- FOTO 3 -->
+      <div class="foto foto3">
+        <img src="3.jpeg" alt="Nossa história">
+        <p>Pequenos momentos, grandes memórias 🥹</p>
+      </div>
+
+
+      <!-- FOTO 4 -->
+      <div class="foto foto4">
+        <img src="5.jpeg" alt="Uma foto nossa">
+        <p>Um pedacinho da nossa história 💕</p>
+      </div>
+
+
+      <!-- FOTO 5 -->
+      <div class="foto foto5">
+        <img src="6.jpeg" alt="Mais uma lembrança">
+        <p>E muitas outras lembranças ainda ❤️</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FRASE -->
+  <section class="momento revelar">
+
+    <div class="emoji">💗</div>
+
+    <blockquote>
+      "O tempo pode mudar muita coisa,
+      mas <span>as boas lembranças sempre encontram
+      um lugar para ficar.</span>"
+    </blockquote>
+
+  </section>
+
+
+  <!-- FINAL -->
+  <section class="final revelar">
+
+    <div class="final-card">
+
+      <div class="bolo">🎂</div>
+
+      <h2>Feliz aniversário!</h2>
+
+      <p>
+        Que esse novo ciclo seja leve, bonito e cheio de momentos
+        que valham a pena guardar.
+        <br><br>
+
+        Espero que você tenha gostado dessa pequena surpresa.
+        Foi feita especialmente para você. 💖✨
+      </p>
+
+    </div>
 
   </section>
 
 
   <footer>
-    Feito com muito carinho 💖
+    Feito com muito carinho 💗
   </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // Faz os elementos aparecerem suavemente
+    // conforme a pessoa vai descendo a página.
+
+    const elementos = document.querySelectorAll(".revelar");
+
+    const observer = new IntersectionObserver((entradas) => {
+
+      entradas.forEach((entrada) => {
+
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visivel");
+        }
+
+      });
+
+    }, {
+      threshold: 0.15
+    });
+
+
+    elementos.forEach((elemento) => {
+      observer.observe(elemento);
+    });
+
+  </script>
 
 </body>
 </html>
+```
