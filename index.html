@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Feliz Aniversário, Tia! 🎂💖</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e7, #fff0f5, #e6d6ff);
+      color: #5a3d4d;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* Tela inicial */
+    .inicio {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .inicio h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: aparecer 2s ease;
+    }
+
+    .inicio p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .botao {
+      background: #e85d8b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .botao:hover {
+      transform: scale(1.08);
+      background: #d94b7a;
+    }
+
+    /* Mensagem */
+    .mensagem {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .mensagem h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+    }
+
+    .mensagem p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.6);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Galeria */
+    .galeria {
+      padding: 60px 20px;
+    }
+
+    .galeria h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+
+    .fotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .foto {
+      background: white;
+      padding: 10px 10px 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transform: rotate(-2deg);
+      transition: 0.3s;
+    }
+
+    .foto:nth-child(even) {
+      transform: rotate(2deg);
+    }
+
+    .foto:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    /* Final */
+    .final {
+      padding: 100px 20px;
+    }
+
+    .final h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .coracao {
+      font-size: 4rem;
+      animation: pulsar 1.5s infinite;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* Celular */
+    @media (max-width: 600px) {
+      .inicio h1 {
+        font-size: 2.2rem;
+      }
+
+      .inicio p {
+        font-size: 1rem;
+      }
+
+      .mensagem h2,
+      .galeria h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Tela inicial -->
+  <section class="inicio">
+    <h1>🎂 Feliz Aniversário, Mi! 💖</h1>
+
+    <p>
+      Hoje é um dia especial, porque celebramos uma pessoa muito importante.
+      Preparei esse pequeno cantinho com algumas lembranças nossas. 🥰
+    </p>
+
+    <a href="#mensagem" class="botao">
+      Clique para ver uma surpresa ✨
+    </a>
+  </section>
+
+
+  <!-- Mensagem -->
+  <section class="mensagem" id="mensagem">
+
+    <h2>💌 Uma mensagem para você</h2>
+
+    <p>
+      Feliz aniversário, tia Mi! ❤️<br><br>
+
+      Mesmo que hoje em dia a gente não tenha tanta convivência quanto
+      antigamente, eu guardo com muito carinho as lembranças que temos juntos.
+      Essas fotos talvez sejam antigas, mas cada uma delas representa momentos
+      especiais que ficaram guardados na memória. 🥹💖<br><br>
+
+      Queria aproveitar o seu dia para te desejar muita felicidade, saúde,
+      amor e muitos momentos bons nessa nova fase da sua vida.
+      Espero que você continue sendo essa pessoa especial e que nunca faltem
+      motivos para sorrir. ✨<br><br>
+
+      Que seu novo ano seja cheio de coisas boas! 🎉🎂<br><br>
+
+      Com muito carinho ❤️
+    </p>
+
+  </section>
+
+
+  <!-- Fotos -->
+  <section class="galeria">
+
+    <h2>📸 Algumas lembranças nossas</h2>
+
+    <div class="fotos">
+
+      <div class="foto">
+        <img src="1.jpeg" alt="Nossa lembrança">
+      </div>
+
+      <div class="foto">
+        <img src="2.jpeg" alt="Nossa lembrança">
+      </div>
+
+      <div class="foto">
+        <img src="3.jpeg" alt="Nossa lembrança">
+      </div>
+
+      <div class="foto">
+        <img src="4.jpeg" alt="Nossa lembrança">
+      </div>
+
+    <div class="foto">
+        <img src="5.jpeg" alt="Nossa lembrança">
+      </div>
+
+          <div class="foto">
+        <img src="6.jpeg" alt="Nossa lembrança">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Final -->
+  <section class="final">
+
+    <h2>Feliz aniversário! 🎉💖</h2>
+
+    <p>
+      Espero que tenha gostado dessa pequena surpresa. 🥰
+    </p>
+
+    <div class="coracao">❤️</div>
+
+  </section>
+
+
+  <footer>
+    Feito com muito carinho 💖
+  </footer>
+
+</body>
+</html>
